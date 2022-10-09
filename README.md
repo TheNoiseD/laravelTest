@@ -1,6 +1,6 @@
 # Manual de Instalacion Test Evertec
 
-###Requisitos
+### Requisitos
 
 - PHP v8.0
 - node v16.14.0
@@ -32,7 +32,7 @@ npm install
 
 4. Duplique el archivo `.env.example` incluido en uno de nombre `.env` y dentro de este ingrese los valores de las variables de entorno necesarias
 
-####Variables a destacar
+#### Variables a destacar
 - `PLACE_TO_PAY_URL`: Url base de la api de Place to pay.
 - `PLACE_TO_PAY_LOGIN`: Login de la api de Place to pay.
 - `PLACE_TO_PAY_SECRET_KEY`: SecretKey de la api de Place to pay.
