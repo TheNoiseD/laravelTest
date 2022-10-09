@@ -19,9 +19,11 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+            'last_name' => fake()->lastName(),
+            'phone' => fake()->phoneNumber(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => '$2y$10$SWyL7BIyrT1Bu/3qxUDutOuisHdDbfEHuXFcqSiENM3zLVdIa.YN2', // password
             'remember_token' => Str::random(10),
         ];
     }

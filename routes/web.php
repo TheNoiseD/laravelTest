@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,11 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+//route resourses products
+Route::resource('products', ProductController::class);
 Route::get('/products', [ProductController::class, 'index'])->name('products');
+
+//auth routes
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::resource('/orders',OrderController::class);
+    Route::resource('cart', CartController::class);
+});
+

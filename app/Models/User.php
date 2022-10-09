@@ -19,6 +19,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'last_name',
+        'phone',
         'email',
         'password',
     ];
@@ -41,4 +43,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+//    un usuario puede tener varios pedidos
+    public function orders()
+    {
+        return $this->hasMany('App\Models\Order');
+    }
 }
